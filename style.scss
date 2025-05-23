@@ -7,55 +7,39 @@ $highlightTxColor: hsl(277, 64%, 61%);
 $paragraphTxColor: hsla(0, 0%, 100%, 0.75);
 $statisticsTxColor: hsla(0, 0%, 100%, 0.6);
 
-// Mixins
-@mixin flexbox($direction, $justify, $align) {
-    display: flex;
-    flex-direction: $direction;
-    justify-content: $justify;
-    align-items: $align;
-}
 
 * { margin: 0; }
 
 body {
     min-height: 100vh;
-    @include flexbox(column, center, center);
+    display: grid;
+    
+
     background-color: $bodyBgColor;
 }
 
 .component {
-    max-width: 900px;
-    height: 25rem;
-    @include flexbox(row-reverse, center, center);
-    margin: 30px;
+
     border-radius: 10px;
     background-color: $cardBgColor;
 
-    @media screen and (max-width: 800px) {
-        max-width: 400px;
-        height: auto;
-        flex-direction: column;
-    }
 
     &__image {
-        min-width: 50%;
-        height: 100%;
-        border-radius: 0 10px 10px 0;
-        background: rgba(128, 0, 128, 0.5) url("images/image-header-desktop.jpg") no-repeat;
-        background-blend-mode: overlay;
 
-        @media screen and (max-width: 800px) {
-            width: 100%;
-            min-height: 300px;
-            border-radius: 10px 10px 0 0;
-            background-image: url("images/image-header-mobile.jpg");
+        background-color: purple;
+        background-repeat: no-repeat;
+        background-blend-mode: multiply;
+
+        @media screen and (max-width: 42rem) {
+            border-radius: 0 10px 10px 0;
+            background-image: url('/images/image-header-mobile.jpg');
+        }
+        @media screen and (min-width: 28rem) {
+            background-image: url('/images/image-header-desktop.jpg');
         }
     }
 
     &__section {
-        @include flexbox(column, center, flex-start);
-        gap: 30px;
-        padding: 50px;
 
         font-family: "Lexend Deca", sans-serif;
 
@@ -66,35 +50,13 @@ body {
             span {
                 color: $highlightTxColor;
             }
-
-            @media screen and (max-width: 800px) {
-                text-align: center;
-            }
         }
         &__content {
             color: $paragraphTxColor;
-
-            @media screen and (max-width: 800px) {
-                text-align: center;
-            }
         }
         &__container {
-            width: 100%;
-            margin-top: 30px;
-            @include flexbox(row, flex-start, center);
 
-            @media screen and (max-width: 800px) {
-                @include flexbox(column, center, center);
-            }
-
-            gap: 60px;
             &__statistics {
-                @include flexbox(column, center, flex-start);
-                gap: 5px;
-
-                @media screen and (max-width: 800px) {
-                    @include flexbox(column, center, center);
-                }
 
                 strong {
                     font-family: Inter, sans-serif;
