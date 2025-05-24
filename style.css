@@ -78,6 +78,7 @@ body {
 }
 .component__section__container {
   display: flex;
+  justify-content: space-around;
   gap: 2rem;
 }
 @media screen and (max-width: 42rem) {
