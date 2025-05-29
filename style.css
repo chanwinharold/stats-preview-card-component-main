@@ -29,23 +29,68 @@ body {
     border-radius: 0;
   }
 }
+@media screen and (26rem < width < 42rem) {
+  .component {
+    max-width: 26rem;
+    min-height: 140vh;
+    margin: 2rem;
+    border-radius: 0.5rem;
+  }
+}
+.component__image {
+  position: relative;
+  background-color: hsl(277, 64%, 61%);
+}
+@media screen and (max-width: 26rem) {
+  .component__image {
+    border-radius: 0;
+  }
+}
+@media screen and (26rem < width < 42rem) {
+  .component__image {
+    border-radius: 0.5rem 0.5rem 0 0;
+  }
+}
+@media screen and (min-width: 42rem) {
+  .component__image {
+    border-radius: 0 0.5rem 0.5rem 0;
+  }
+}
+.component__image img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  mix-blend-mode: multiply;
+}
+@media screen and (max-width: 26rem) {
+  .component__image img {
+    border-radius: 0;
+  }
+}
+@media screen and (26rem < width < 42rem) {
+  .component__image img {
+    border-radius: 0.5rem 0.5rem 0 0;
+  }
+}
+@media screen and (min-width: 42rem) {
+  .component__image img {
+    border-radius: 0 0.5rem 0.5rem 0;
+  }
+}
 @media screen and (max-width: 42rem) {
   .component__image {
     width: 100%;
-    min-height: 480px;
-    background: purple url("/images/image-header-mobile.jpg") center no-repeat;
-    background-blend-mode: multiply;
-    background-size: cover;
-    border-radius: 0;
+    min-height: 250px;
   }
 }
 @media screen and (min-width: 42rem) {
   .component__image {
     width: 50%;
-    background: purple url("/images/image-header-desktop.jpg") center no-repeat;
-    background-blend-mode: multiply;
-    background-size: cover;
-    border-radius: 0 0.5rem 0.5rem 0;
+    max-height: 100%;
   }
 }
 .component__section {
